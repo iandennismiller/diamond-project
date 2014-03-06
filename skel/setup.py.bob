@@ -6,7 +6,11 @@ version = '0.1'
 setup(version=version,
       name='{{{ application.name }}}',
       description = "{{{ application.name }}}",
-      packages = ["{{{ application.module }}}"],
+      packages = [
+            "{{{ application.module }}}",
+            "{{{ application.module }}}.Views",
+            "{{{ application.module }}}.Utils",
+            ],
       scripts = [
       #      "bin/runserver.py",
       #      "bin/manage.py",

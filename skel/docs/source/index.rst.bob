@@ -8,7 +8,7 @@ Contents:
 .. toctree::
    :maxdepth: 6
 
-   auto/{{{ application.name }}}/{{{ application.module }}}
+   auto/{{{ application.module }}}/modules
 
 
 Indices and tables
