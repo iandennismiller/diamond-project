@@ -1,26 +1,38 @@
 # {{{ application.name }}}
 
+{{{ description.short }}}
+
+{{{ description.long }}}
+
 ## installation
 
 1. First clone {{{ application.name }}}
 
-    git clone {{{ git_repo }}}
-    cd {{{ application.name }}}
+```
+git clone {{{ git_repo }}}
+cd {{{ application.name }}}
+```
 
 2. Install libraries and dependencies
 
-    sudo mkdir /var/lib/{{{ application.name }}}
-    sudo chown $USER /var/lib/{{{ application.name }}}
-    mkvirtualenv {{{ application.name }}}
-    make dep install doc test
+```
+sudo mkdir /var/lib/{{{ application.name }}}
+sudo chown $USER /var/lib/{{{ application.name }}}
+mkvirtualenv {{{ application.name }}}
+make dep install doc test
+```
 
 3. Set up the application database
 
-    make db
+```
+make db
+```
 
 4. Finally, run the server locally
 
-    make server
+```
+make server
+```
 
 ## Developing with {{{ application.name }}}
 
@@ -33,22 +45,36 @@ runserver.py: spawn the daemon (usually not called directly)
 
 ### to start the dev server locally
 
-    make server
+```
+make server
+```
 
 ### to test the package locally
 
-    make test
+```
+make test
+```
 
 ### to watch files for changes and repeatedly re-run tests
 
-    make watch
+```
+make watch
+```
 
 ## fabfile.py: deployment
 
 ### to deploy
 
-    fab -H example.com rsync setup restart
+```
+fab -H example.com rsync setup restart
+```
 
 ### to launch an interactive session
 
-    fab -H example.com ipython
+```
+fab -H example.com ipython
+```
+
+## License
+
+MIT License.
