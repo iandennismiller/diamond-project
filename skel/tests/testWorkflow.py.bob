@@ -1,0 +1,18 @@
+# -*- coding: utf-8 -*-
+
+from nose.plugins.attrib import attr
+import os, shutil, tempfile, sys
+
+sys.path.insert(0, '.')
+os.environ['SETTINGS'] = "../etc/testing.conf"
+
+from {{{ application.module }}} import Models
+from {{{ application.module }}}.Utils import TestHelpers
+
+class {{{ application.module }}}WorkflowTestCase(TestHelpers.GeneralTestCase):
+    @attr("single")
+    def test_user(self):
+        "user created in workflow"
+        u = Models.User.find(email='guest')
+        assert u
+        assert u.email == 'guest'
