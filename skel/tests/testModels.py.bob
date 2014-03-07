@@ -15,7 +15,7 @@ class ModelTestCase(TestHelpers.GeneralTestCase):
         self.db.create_all()
         # do not create default items here; i.e. only drop and create tables
 
-class {{{ application.module }}}ModelTestCase(ModelTestCase):
+class {{{ application.module }}}_ModelTestCase(ModelTestCase):
     def test_user(self):
         ian = Models.User.create(email='ian', password='ian')
         ian = Models.User.find(email='ian')

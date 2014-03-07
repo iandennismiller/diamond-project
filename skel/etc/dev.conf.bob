@@ -3,7 +3,7 @@ PORT = {{{ application.port }}}
 LOG = "/var/lib/{{{ application.name }}}/dev.log"
 SQLALCHEMY_DATABASE_URI = "sqlite:////var/lib/{{{ application.name }}}/dev.db"
 
-SECURITY_PASSWORD_SALT = "{{{ hash_salt }}}"
+SECURITY_PASSWORD_SALT = {{{ hash_salt }}}
 SECRET_KEY = {{{ secret }}}
 
 DEBUG = True

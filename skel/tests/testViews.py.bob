@@ -8,7 +8,7 @@ os.environ['SETTINGS'] = "../etc/testing.conf"
 
 from {{{ application.module }}}.Utils import TestHelpers
 
-class {{{ application.module }}}ViewTestCase(TestHelpers.GeneralTestCase):
+class {{{ application.module }}}_ViewTestCase(TestHelpers.GeneralTestCase):
     def test_login(self):
         rv = self.client.get('/login')
         assert '{{{ application.name }}}' in rv.data

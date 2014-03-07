@@ -9,7 +9,7 @@ os.environ['SETTINGS'] = "../etc/testing.conf"
 from {{{ application.module }}} import Models
 from {{{ application.module }}}.Utils import TestHelpers
 
-class {{{ application.module }}}WorkflowTestCase(TestHelpers.GeneralTestCase):
+class {{{ application.module }}}_WorkflowTestCase(TestHelpers.GeneralTestCase):
     @attr("single")
     def test_user(self):
         "user created in workflow"
