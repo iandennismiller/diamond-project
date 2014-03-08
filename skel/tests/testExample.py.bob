@@ -3,11 +3,8 @@
 from nose.plugins.attrib import attr
 import os, shutil, tempfile, sys
 
-sys.path.insert(0, '.')
-os.environ['SETTINGS'] = "../etc/testing.conf"
-
-from {{{ application.module }}} import Models, security
-from {{{ application.module }}}.Utils import TestHelpers
+from flask.ext.diamond.utils.testhelpers import GeneralTestCase
+from {{{ application.module }}} import Models
 
 class ModelTestCase(TestHelpers.GeneralTestCase):
     def setUp(self):

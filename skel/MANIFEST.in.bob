@@ -1,2 +1,2 @@
-recursive-include {{{ application.module }}}/Views/templates *
-recursive-include {{{ application.module }}}/Views/static *
+recursive-include {{{ application.module }}}/views/templates *
+recursive-include {{{ application.module }}}/views/static *
