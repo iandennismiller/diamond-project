@@ -9,7 +9,6 @@ setup(version=version,
       packages = [
             "{{{ application.module }}}",
             "{{{ application.module }}}.views",
-            "{{{ application.module }}}.utils",
             ],
       scripts = [
       #      "bin/runserver.py",
@@ -23,12 +22,13 @@ setup(version=version,
       author_email='{{{ author.email }}}',
       url='{{{ author.url }}}',
       dependency_links = [
-            'https://github.com/iandennismiller/Flask-Diamond/tarball/master#egg=flask_diamond-0.1',
+            'https://github.com/iandennismiller/Flask-Diamond/archive/v0.1.1.tar.gz#egg=flask_diamond-0.1.1',
             'https://github.com/mrjoes/flask-admin/tarball/master#egg=flask_admin-1.0.7'
             ],
       install_requires = [
             ### app
-            "flask_diamond==0.1",
+            "flask_admin==1.0.7",
+            "flask_diamond==0.1.1",
 
             ### databases
             ### mongodb
