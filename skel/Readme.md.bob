@@ -19,7 +19,7 @@ cd {{{ application.name }}}
 sudo mkdir /var/lib/{{{ application.name }}}
 sudo chown $USER /var/lib/{{{ application.name }}}
 mkvirtualenv {{{ application.name }}}
-make dep install doc test
+make install doc test
 ```
 
 3. Set up the application database

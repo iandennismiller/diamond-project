@@ -35,7 +35,7 @@ def init_db():
     db.drop_all()
     db.create_all()
     db.session.commit()
-    cfg = alembic.config.Config("migrations/alembic.ini")
+    cfg = alembic.config.Config("db/alembic.ini")
     alembic.command.stamp(cfg, "head")
 
 @manager.command

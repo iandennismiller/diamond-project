@@ -12,7 +12,7 @@ install:
 
 clean:
 	rm -rf build dist *.egg-info
-	rm -rf docs/source/auto docs/build
+	rm -rf docs/sphinx/source/auto docs/build
 	-rm `find . -name "*.pyc"`
 
 server:
@@ -35,10 +35,10 @@ db:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py populate_db
 
 doc:
-	rm -rf docs/source/auto
-	mkdir -p docs/source/auto/$(MOD_NAME)
-	sphinx-apidoc -o docs/source/auto/$(MOD_NAME) $(MOD_NAME)
-	SETTINGS=$$PWD/etc/dev.conf sphinx-build -b html docs/source docs/build
+	rm -rf docs/sphinx/source/auto
+	mkdir -p docs/sphinx/source/auto/$(MOD_NAME)
+	sphinx-apidoc -o docs/sphinx/source/auto/$(MOD_NAME) $(MOD_NAME)
+	SETTINGS=$$PWD/etc/dev.conf sphinx-build -b html docs/sphinx/source docs/build
 	open docs/build/index.html
 
 notebook:
