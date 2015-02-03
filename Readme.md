@@ -1,4 +1,6 @@
-# flask skeleton
+# Diamond skeleton
+
+Read more about Diamond here: https://github.com/iandennismiller/flask-diamond
 
 ## first clone the skeleton
 
