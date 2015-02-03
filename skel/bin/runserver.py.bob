@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# {{{ application.module }}} (c) {{{ author.name }}}
 
-import {{{ application.module }}}, logging
-app = {{{ application.module }}}.create_app()
-logging.getLogger("{{{ application.name }}}").info("runserver.py starting")
+from {{{ application.module }}} import create_app
+app = create_app()
 app.run(port=app.config['PORT'])
