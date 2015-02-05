@@ -34,7 +34,7 @@ db:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py init_db
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py populate_db
 
-doc:
+docs:
 	rm -rf docs/sphinx/source/auto
 	mkdir -p docs/sphinx/source/auto/$(MOD_NAME)
 	sphinx-apidoc -o docs/sphinx/source/auto/$(MOD_NAME) $(MOD_NAME)
@@ -44,4 +44,4 @@ doc:
 notebook:
 	SETTINGS=$$PWD/etc/dev.conf cd var/ipython && ipython notebook
 
-.PHONY: clean install test server watch notebook db single doc shell
+.PHONY: clean install test server watch notebook db single docs shell
