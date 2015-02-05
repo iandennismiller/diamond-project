@@ -1,6 +1,3 @@
 /build/
 /dist/
 /*.egg-info/
-/lib/
-/var/sphinx/
-/var/ipython/
