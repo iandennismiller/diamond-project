@@ -2,6 +2,5 @@
 /dist/
 /*.egg-info/
 /lib/
-/docs/sphinx/build/
-/docs/sphinx/source/auto/
+/var/sphinx/
 /var/ipython/
