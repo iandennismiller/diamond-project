@@ -1,5 +1,4 @@
-# {{{ author.name }}}
-# {{{ author.url }}}
+# {{{ application.name }}} (c) {{{ author.name }}}
 
 SHELL=/bin/bash
 PROJECT_NAME={{{ application.name }}}
