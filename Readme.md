@@ -2,13 +2,15 @@
 
 Read more about Diamond here: https://github.com/iandennismiller/flask-diamond
 
-## first clone the skeleton
+## Usage
+
+### first clone the skeleton
 
 ```
-git clone git@github.com:iandennismiller/diamond-scaffold.git /tmp/diamond-scaffold
+git clone https://github.com/iandennismiller/diamond-scaffold.git /tmp/diamond-scaffold
 ```
 
-## then use it to scaffold in the current directory
+### then use it to scaffold in the current directory
 
 ```
 pip install mrbob
