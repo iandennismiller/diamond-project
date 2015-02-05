@@ -4,7 +4,7 @@
 SHELL=/bin/bash
 PROJECT_NAME={{{ application.name }}}
 MOD_NAME={{{ application.module }}}
-TEST_CMD=SETTINGS=$$PWD/etc/testing.conf nosetests
+TEST_CMD=SETTINGS=$$PWD/etc/testing.conf nosetests -w $(MOD_NAME)
 
 install:
 	python setup.py install
@@ -33,6 +33,12 @@ db:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py init_db
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py populate_db
 
+upgradedb:
+	SETTINGS=$$PWD/etc/dev.conf bin/manage.py db upgrade
+
+migratedb:
+	SETTINGS=$$PWD/etc/dev.conf bin/manage.py db migrate
+
 docs:
 	rm -rf docs/api etc/sphinx/api var/sphinx/api
 	mkdir -p var/sphinx/api/$(MOD_NAME)
@@ -45,4 +51,4 @@ docs:
 notebook:
 	SETTINGS=$$PWD/etc/dev.conf cd var/ipython && ipython notebook
 
-.PHONY: clean install test server watch notebook db single docs shell
+.PHONY: clean install test server watch notebook db single docs shell upgradedb migratedb
