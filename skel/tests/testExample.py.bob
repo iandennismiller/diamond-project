@@ -1,20 +1,25 @@
 # -*- coding: utf-8 -*-
 
 from nose.plugins.attrib import attr
-import os, shutil, tempfile, sys
 
 from flask.ext.diamond.utils.testhelpers import GeneralTestCase
-from {{{ application.module }}} import Models
+from {{{ application.module }}} import models
 
-class ModelTestCase(TestHelpers.GeneralTestCase):
+
+class ModelTestCase(GeneralTestCase):
     def setUp(self):
         self.db.drop_all()
         self.db.create_all()
         # do not create default items here; i.e. only drop and create tables
 
+
 class {{{ application.module }}}_ModelTestCase(ModelTestCase):
     def test_user(self):
-        ian = Models.User.create(email='ian', password='ian')
-        ian = Models.User.find(email='ian')
+        ian = models.User.create(email='ian', password='ian')
+        ian = models.User.find(email='ian')
         assert ian
         assert ian.email == 'ian'
+
+    @attr("skip")
+    def test_skip(self):
+        assert False

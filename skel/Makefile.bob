@@ -4,8 +4,7 @@
 SHELL=/bin/bash
 PROJECT_NAME={{{ application.name }}}
 MOD_NAME={{{ application.module }}}
-TEST_CMD=SETTINGS=$$PWD/etc/testing.conf nosetests -c tests/nose/test.cfg
-TEST_SINGLE=SETTINGS=$$PWD/etc/testing.conf nosetests -c tests/nose/test-single.cfg
+TEST_CMD=SETTINGS=$$PWD/etc/testing.conf nosetests
 
 install:
 	python setup.py install
@@ -22,13 +21,13 @@ shell:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py shell
 
 watch:
-	watchmedo shell-command -R -p "*.py" -c 'echo \\n\\n\\n\\nSTART; date; $(TEST_SINGLE); date' .
+	watchmedo shell-command -R -p "*.py" -c 'echo \\n\\n\\n\\nSTART; date; $(TEST_CMD) -c etc/nose/test-single.cfg; date' .
 
 test:
-	$(TEST_CMD)
+	$(TEST_CMD) -c etc/nose/test.cfg
 
 single:
-	$(TEST_SINGLE)
+	$(TEST_CMD) -c etc/nose/test-single.cfg
 
 db:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py init_db
