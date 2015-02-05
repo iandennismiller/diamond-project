@@ -34,11 +34,13 @@ db:
 	SETTINGS=$$PWD/etc/dev.conf bin/manage.py populate_db
 
 docs:
-	rm -rf var/sphinx/apidocs
-	mkdir -p var/sphinx/apidocs/$(MOD_NAME)
-	sphinx-apidoc -o var/sphinx/apidocs/$(MOD_NAME) $(MOD_NAME)
+	rm -rf docs/api etc/sphinx/api var/sphinx/api
+	mkdir -p var/sphinx/api/$(MOD_NAME)
+	sphinx-apidoc -o var/sphinx/api/$(MOD_NAME) $(MOD_NAME)
+	ln -s $$PWD/var/sphinx/api etc/sphinx/api
 	SETTINGS=$$PWD/etc/dev.conf sphinx-build -b html etc/sphinx var/sphinx/build
 	mv var/sphinx/build docs/api
+	rm -rf etc/sphinx/api var/sphinx/api
 
 notebook:
 	SETTINGS=$$PWD/etc/dev.conf cd var/ipython && ipython notebook
