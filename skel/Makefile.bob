@@ -37,8 +37,7 @@ docs:
 	rm -rf docs/sphinx/source/auto
 	mkdir -p docs/sphinx/source/auto/$(MOD_NAME)
 	sphinx-apidoc -o docs/sphinx/source/auto/$(MOD_NAME) $(MOD_NAME)
-	SETTINGS=$$PWD/etc/dev.conf sphinx-build -b html docs/sphinx/source docs/build
-	open docs/build/index.html
+	SETTINGS=$$PWD/etc/dev.conf sphinx-build -b html docs/sphinx/source docs/sphinx/build
 
 notebook:
 	SETTINGS=$$PWD/etc/dev.conf cd var/ipython && ipython notebook
