@@ -1,4 +1,4 @@
-# Diamond skeleton
+# Diamond Project skeleton
 
 Read more about Diamond here: https://github.com/iandennismiller/flask-diamond
 
