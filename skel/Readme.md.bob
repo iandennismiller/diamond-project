@@ -6,31 +6,22 @@
 
 ## quick start
 
-### clone {{{ application.name }}}
-
-```
-git clone {{{ git_repo }}}
-cd {{{ application.name }}}
-```
-
-### Install libraries and dependencies
-
 ```
 mkvirtualenv {{{ application.name }}}
-make install docs test
+git clone {{{ git_repo }}}
+cd {{{ application.name }}}
+make install docs test db server
 ```
 
-### Set up the application database
+## Pre-requisites
 
-```
-make db
-```
-
-### Finally, run the server locally
-
-```
-make server
-```
+- python 2.7
+- libxml-dev
+- libxslt-dev
+- python-dev
+- virtualenv
+- virtualenvwrapper
+- pip
 
 ## Further Reading
 

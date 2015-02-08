@@ -1,9 +1,5 @@
 # {{{ application.name }}}
 
-{{{ description.short }}}
-
-{{{ description.long }}}
-
 ## installation
 
 ### clone {{{ application.name }}}
