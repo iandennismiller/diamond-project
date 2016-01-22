@@ -1,23 +1,6 @@
-# Diamond Project skeleton
+# Diamond project skeleton
 
-Read more about Diamond here: https://github.com/iandennismiller/flask-diamond
+This project has been merged into Flask-Diamond.
 
-## Usage
+https://github.com/diamond-org/flask-diamond
 
-### clone the skeleton
-
-```
-git clone https://github.com/iandennismiller/diamond-project.git /tmp/diamond-project
-```
-
-### scaffold in the current directory
-
-```
-mrbob -w /tmp/diamond-project/skel
-```
-
-## Pre-requisites
-
-```
-pip install mr.bob
-```
